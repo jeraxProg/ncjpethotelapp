@@ -30,7 +30,7 @@ const HeroSection = () => {
       <HeroContent>
         <HeroH1>Home for your Family Pet</HeroH1>
         <HeroP>
-          Lorem ipsum dolor sit amet, co
+    
         </HeroP>
         <HeroBtnWrapper>
           <Button2 to="/reserve" 

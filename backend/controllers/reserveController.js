@@ -29,7 +29,7 @@ const getReservation = async (req, res) => {
 
 //create a reservation
 const createReservation = async (req, res) => {
-    const { name, email, petname, breed, size, phone, startDate, endDate } = req.body
+    const { name, email, petname, breed, size, phone, startDate, endDate, typeOfPet } = req.body
 
     let emptyFields = []
 
@@ -44,6 +44,9 @@ const createReservation = async (req, res) => {
     }
     if (!breed) {
         emptyFields.push('breed')
+    }
+    if (!typeOfPet) {
+        emptyFields.push('typeOfPet')
     }
     if (!phone) {
         emptyFields.push('phone')
@@ -63,7 +66,7 @@ const createReservation = async (req, res) => {
 
     //add doc to db
     try {
-        const reservation = await Reservation.create({ name, email, petname, breed, size, phone, startDate, endDate })
+        const reservation = await Reservation.create({ name, email, petname, breed, size, phone, startDate, endDate,typeOfPet })
         res.status(200).json(reservation)
 
     } catch (error) {

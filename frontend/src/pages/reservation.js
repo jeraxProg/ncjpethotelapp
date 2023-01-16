@@ -5,7 +5,7 @@ import { useReservationsContext } from '../hooks/useReservationsContext'
 
 //Components
 import ReservationDetails from '../components/ReservationDetails'
-import UserReservationDetails from '../components/userReservationDetails'
+// import UserReservationDetails from '../components/userReservationDetails'
 import ReservationForm from '../components/ReservationForm'
 const Reservation = () => {
     const {reservations, dispatch} = useReservationsContext()
@@ -30,7 +30,8 @@ const Reservation = () => {
     },[])
 
   return (
-    <div className='reserve'>
+    <div className='reserver'>
+              <ReservationForm />
         <div className='reservations'><h1>Reserve</h1>
        
             {reservations && reservations.map((reservation) => (
@@ -38,7 +39,7 @@ const Reservation = () => {
                 
             ))}
         </div>
-        <ReservationForm />
+  
     </div>
   ) 
 }

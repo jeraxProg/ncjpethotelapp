@@ -11,9 +11,9 @@ import {
   MobileIcon, 
   NavMenu, 
   NavItem, 
-  NavLinks,
+  // NavLinks,
   NavLinks2,
-  NavLinkss,
+  // NavLinkss,
   NavBtn,
   NavBtnLink,
 } from './NavbarElements';
@@ -48,9 +48,9 @@ const Navbar = ({toggle}) => {
             <FaBars/>
           </MobileIcon>
           <NavMenu>
-            <NavItem>
+            {/* <NavItem>
               <NavLinkss 
-              to='home'
+              to='/'
               smooth={true} 
               duration={500} 
               spy={true} 
@@ -58,8 +58,8 @@ const Navbar = ({toggle}) => {
               offset={-80}
               >
               Home</NavLinkss>
-            </NavItem>
-            <NavItem>
+            </NavItem> */}
+            {/* <NavItem>
               <NavLinks to="about"
               smooth={true} 
               duration={500} 
@@ -67,8 +67,8 @@ const Navbar = ({toggle}) => {
               exact='true' 
               offset={-80}
               >About</NavLinks>
-            </NavItem>
-            <NavItem>
+            </NavItem> */}
+            {/* <NavItem>
               <NavLinks to="services"
               smooth={true} 
               duration={500} 
@@ -76,7 +76,7 @@ const Navbar = ({toggle}) => {
               exact='true' 
               offset={-80}
               >Services</NavLinks>
-            </NavItem>
+            </NavItem> */}
             <NavItem>
               <NavLinks2 to="/petboarding"
               smooth={true} 
@@ -84,6 +84,14 @@ const Navbar = ({toggle}) => {
               spy={true} 
               exact='true' 
               offset={-80}>Pet-boarding</NavLinks2>
+            </NavItem>
+            <NavItem>
+              <NavLinks2 to="/search"
+              smooth={true} 
+              duration={500} 
+              spy={true} 
+              exact='true' 
+              offset={-80}>Search Reservation</NavLinks2>
             </NavItem>
             
           </NavMenu>

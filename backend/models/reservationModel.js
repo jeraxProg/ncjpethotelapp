@@ -19,6 +19,10 @@ const reservationSchema = new Schema({
         type: String,
         required: true,
     },
+    typeOfPet: {
+        type: String,
+        required: true,
+    },
     size: {
         type: String,
         required: true,

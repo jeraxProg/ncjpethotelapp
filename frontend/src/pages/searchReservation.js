@@ -1,17 +1,12 @@
-import {useEffect} from 'react'
-// import React, {useEffect, useState} from 'react'
+import {useEffect, useState} from 'react'
+// import { FaSearch } from "react-icons/fa";
+import UserReservationDetails from '../components/userReservationDetails'
 import { useReservationsContext } from '../hooks/useReservationsContext'
 
+const SearchReservation = () => {
+    const {reservations, dispatch} = useReservationsContext()
+    const [searchValue, setSearchValue] = useState('')
 
-//Components
-// import ReservationDetails from '../components/ReservationDetails'
-import ReservationForm from '../components/ReservationForm'
-// import UserReservationDetails from '../components/userReservationDetails'
-
-
-
-const Home = () => {
-   const {reservations, dispatch} = useReservationsContext()
 
     // const [reservations, setReservations] = useState(null)
 
@@ -33,18 +28,19 @@ const Home = () => {
     },[])
 
   return (
-    <div className='home'>
-        {/* <div className='reservations'><h1>Reservations</h1>
+    <div className='reserve'>
+        <div className='reservations'><h1>Search Reservation Here</h1>
+        <form className='searchbox' action="">
+      <input type="text" placeholder="Please put your Referrence ID" name="search" onChange={(e) => setSearchValue(e.target.value)}/>
+    </form>
        
-            {reservations && reservations.map((reservation) => (
+            {reservations && reservations.filter(reservation=>reservation._id.toLowerCase().includes(searchValue)).map((reservation) => (
                 <UserReservationDetails key={reservation.id} reservation={reservation} />                                           
                 
             ))}
-        </div> */}
-        
-        <ReservationForm />
+        </div>
     </div>
   ) 
 }
 
-export default Home
+export default SearchReservation

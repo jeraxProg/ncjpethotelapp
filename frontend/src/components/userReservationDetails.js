@@ -21,9 +21,9 @@ const UserReservationDetails = ({ reservation }) => {
   return (
     <div className='reservation-details'>
         <h3>Referrence ID: {reservation._id}</h3>
-        <h4>Petname: {reservation.petname}</h4> 
+        <h4>Petname: {reservation.petname}</h4>
+        <p>Type of Pet: {reservation.typeOfPet}</p> 
         <p>Breed: {reservation.breed}</p>
-        {/* <p>Size: {reservation.size}</p> */}
         <p>Owner: {reservation.name}</p>
         <p>Email: {reservation.email}</p>
         <p>Phone No: {reservation.phone}</p>

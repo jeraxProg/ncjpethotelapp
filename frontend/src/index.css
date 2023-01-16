@@ -42,15 +42,27 @@ header a {
 
 /* homepage */
 .home {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 100px;
+display: flex;
+justify-content: center;
+margin: 70px;
+}
+.reserver {
+margin: 100px;
 }
 .reserve {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 100px;
-}
+  display: flex;
+  justify-content: center;
+  }
+  .searchbox{
+    display: flex;
+    align-items: center;
+  }
+  
+  .searchbtn {
+    display: flex;
+    align-items: center;
+    border-radius: 0 10px 10px 0;
+  }
 .reservation-details {
   background: #fff;
   border-radius: 4px;
@@ -61,7 +73,7 @@ header a {
 }
 .reservation-details h4 {
   margin: 0 0 10px 0;
-  font-size: 1.2em;
+  font-size: 1.2rem;
   color: var(--primary);
 }
 .reservation-details p {
@@ -81,7 +93,10 @@ header a {
 }
 
 
-.create {
+/* .create {
+  display: flex;
+  justify-content: center;
+ align-items: center; 
   background: #fff;
   border-radius: 4px;
   margin: 20px auto;
@@ -89,6 +104,20 @@ header a {
   position: relative;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
   width: 20em;
+} */
+
+.create {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.col2 {
+  margin-top:-65px;
+}
+.col3 {
+  margin-top:-170px;
 }
 label, input {
   display: block;
@@ -102,6 +131,16 @@ input {
   border-radius: 4px;
   box-sizing: border-box;
 }
+select {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
 form button {
   background: var(--primary);
   border: 0;
