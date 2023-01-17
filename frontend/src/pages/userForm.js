@@ -5,12 +5,13 @@ import { useReservationsContext } from '../hooks/useReservationsContext'
 
 //Components
 // import ReservationDetails from '../components/ReservationDetails'
-import ReservationForm from '../components/ReservationForm'
+// import ReservationForm from '../components/ReservationForm'
+import UserReservationForm from '../components/UserReservationForm'
 // import UserReservationDetails from '../components/userReservationDetails'
 
 
 
-const Home = () => {
+const UserForm = () => {
    const {reservations, dispatch} = useReservationsContext()
 
     // const [reservations, setReservations] = useState(null)
@@ -42,9 +43,9 @@ const Home = () => {
             ))}
         </div> */}
         
-        <ReservationForm />
+        <UserReservationForm />
     </div>
   ) 
 }
 
-export default Home
+export default UserForm

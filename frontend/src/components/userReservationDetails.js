@@ -3,7 +3,7 @@ import { useReservationsContext } from '../hooks/useReservationsContext'
 //date-fns
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 
-const UserReservationDetails = ({ reservation }) => {
+const UserReservationDetails = ({ reservation, noDetail }) => {
   const { dispatch } = useReservationsContext()
 
   const handleClick = async () => {

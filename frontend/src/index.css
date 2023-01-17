@@ -49,10 +49,6 @@ margin: 70px;
 .reserver {
 margin: 100px;
 }
-.reserve {
-  display: flex;
-  justify-content: center;
-  }
   .searchbox{
     display: flex;
     align-items: center;
@@ -63,10 +59,13 @@ margin: 100px;
     align-items: center;
     border-radius: 0 10px 10px 0;
   }
+  .reservations {
+    display: flex; 
+  }
 .reservation-details {
   background: #fff;
   border-radius: 4px;
-  margin: 20px auto;
+  margin: 20px 10px;
   padding: 20px;
   position: relative;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
@@ -83,7 +82,7 @@ margin: 100px;
 }
 .reservation-details span {
   position: absolute;
-  top: 20px;
+  top: 5px;
   right: 20px;
   cursor: pointer;
   background: #f1f1f1;
@@ -91,33 +90,32 @@ margin: 100px;
   border-radius: 50%;
   color: #333;
 }
+.reservationsUser {
+  display: flex; 
+  justify-content: center;
+  flex-direction: column;
+}
 
-
-/* .create {
+.createss {
   display: flex;
   justify-content: center;
  align-items: center; 
   background: #fff;
   border-radius: 4px;
-  margin: 20px auto;
+  margin: 50px auto;
   padding: 20px;
   position: relative;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
-  width: 20em;
-} */
-
-.create {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+  gap: 40px;
 }
+
+
 
 .col2 {
   margin-top:-65px;
 }
 .col3 {
-  margin-top:-170px;
+  margin-top:-120px;
 }
 label, input {
   display: block;
@@ -164,4 +162,65 @@ div.error {
 }
 input.error {
   border: 1px solid var(--error);
+}
+
+.edit {
+margin: 0 50px;
+}
+
+
+.modalBackground {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 50px;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modalContainer{
+  width: 30%;
+  margin: 50px auto;
+  border-radius: 12px;
+  background-color: white;
+  padding: 50px 0;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.40);
+}
+.create {
+  padding: 0 70px;
+}
+
+.titleCloseBtn{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 40px;
+}
+
+.titleCloseBtn button{
+  background-color: transparent;
+  border:none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.titleCloseBtn button:hover{
+color: #e7195a;
+
+
+}
+
+.searchId {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px;
+
+}
+.showDetailBtn {
+ height: 40px; 
+ margin-bottom: 10px;
+}
+.sample {
+  display: flex;
 }

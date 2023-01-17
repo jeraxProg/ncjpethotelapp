@@ -6,10 +6,11 @@ import Navbar from './components/Navbar';
 import Homepage from './pages';
 
 //Pages and Components
-import Home from './pages/Home';
 import Petboardingpage from './pages/petboarding';
-import Reservation from './pages/reservation';
+// import Reservation from './pages/Admin';
 import SearchReservation from './pages/searchReservation';
+import UserForm from './pages/userForm';
+import Admin from './pages/Admin';
 
 function App() {
   return (
@@ -20,8 +21,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Homepage/>}/>
           <Route path='/petboarding' element={<Petboardingpage/>}/>
-          <Route path='/reserve' element={<Home/>}/>
-          <Route path='/admin' element={<Reservation/>}/>
+          <Route path='/reserve' element={<UserForm/>}/>
+          <Route path='/admin' element={<Admin/>}/>
           <Route path='/search' element={<SearchReservation/>}/>
           <Route path="*" element={<h1>Page Not Found</h1>} />
         </Routes>

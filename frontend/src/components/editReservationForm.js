@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useReservationsContext } from '../hooks/useReservationsContext'
 
 
-const ReservationForm = ({closeModal}) => {
+const EditReservationForm = ({closeModal}) => {
     const { dispatch } = useReservationsContext()
 
     const [petname, setPetname] = useState('')
@@ -55,11 +55,10 @@ const ReservationForm = ({closeModal}) => {
 
         <div className='modalBackground'>
         <div className='modalContainer'>
-            <div className='titleCloseBtn'>
-            <button  onClick={() => closeModal(false)}>X</button>
+        <div className='titleCloseBtn'>
+            <button onClick={() => closeModal(false)}>X</button>
             </div>
             <form className='create' onSubmit={handleSubmit}>
-               
                     <h3>Make a Reservation</h3>
 
                     {error && <div className='error'>{error}</div>}
@@ -98,12 +97,12 @@ const ReservationForm = ({closeModal}) => {
                         id='petname'
                         placeholder='Your Pet Name'
                         className={emptyFields.includes('petname') ? 'error' : ''} />
-                 
+                    
 
 
-          
+    
 
-           
+             
                     <label for='size'>Pet Size</label>
                     <select onChange={(e) => setSize(e.target.value)} >
                         <option value='' >--Please Select Size--</option>
@@ -129,8 +128,7 @@ const ReservationForm = ({closeModal}) => {
                         className={emptyFields.includes('breed') ? 'error' : ''} />
 
             
-       
-
+            
                     <label for='startDate'>Start Date Reservation</label>
                     <input type='date'
                         onChange={(e) => setStartDate(e.target.value)}
@@ -147,16 +145,14 @@ const ReservationForm = ({closeModal}) => {
                         id='endDate'
                         placeholder='Your EndDate'
                     />
+                    <button className='btnSubmit' type='submit'>Submit</button>
 
-               
 
-<button className='btnSubmit' type='submit'>Submit</button>
             </form>
-            
             </div>
 
         </div>
     )
 }
 
-export default ReservationForm
+export default EditReservationForm

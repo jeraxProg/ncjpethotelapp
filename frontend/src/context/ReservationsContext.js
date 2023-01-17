@@ -16,7 +16,12 @@ export const reservationsReducer = (state, action) => {
             return {
                 reservations: state.reservations.filter((r) => r._id !== action.payload._id)
             }
+        case 'UPDATE_RESERVATIONS':
+            return {
+                reservations: state.reservations.filter((r) => r._id !== action.payload._id)
+            }
             default:
+       
                 return state
     }
 

@@ -1,4 +1,4 @@
-import {useEffect} from 'react'
+import { useEffect, useState } from 'react'
 // import React, {useEffect, useState} from 'react'
 import { useReservationsContext } from '../hooks/useReservationsContext'
 
@@ -7,16 +7,16 @@ import { useReservationsContext } from '../hooks/useReservationsContext'
 import ReservationDetails from '../components/ReservationDetails'
 // import UserReservationDetails from '../components/userReservationDetails'
 import ReservationForm from '../components/ReservationForm'
-const Reservation = () => {
-    const {reservations, dispatch} = useReservationsContext()
+const Admin = () => {
+    const { reservations, dispatch } = useReservationsContext()
 
-    // const [reservations, setReservations] = useState(null)
+    const [openModal, setOpenModal] = useState(false);
 
     useEffect(() => {
         const fetchReservations = async () => {
             const response = await fetch('api/reservations')
             const json = await response.json()
-           
+
             if (response.ok) {
                 // setReservations(json)
                 dispatch({
@@ -27,21 +27,22 @@ const Reservation = () => {
             }
         }
         fetchReservations()
-    },[])
+    }, [])
 
-  return (
-    <div className='reserver'>
-              <ReservationForm />
-        <div className='reservations'><h1>Reserve</h1>
-       
-            {reservations && reservations.map((reservation) => (
-                <ReservationDetails key={reservation.id} reservation={reservation} />                                           
-                
-            ))}
+    return (
+        <div className='reserver'>
+
+            <button className='openModalBtn' onClick={() => { setOpenModal(true) }}>Add Reservation</button>
+            {openModal && <ReservationForm closeModal={setOpenModal} />}
+            <h1>Reservations</h1>
+            <div className='reservations'>
+                {reservations && reservations.map((reservation) => (
+                    <ReservationDetails key={reservation.id} reservation={reservation} />
+
+                ))}
+            </div>
+
         </div>
-  
-    </div>
-  ) 
-}
-
-export default Reservation
+    )
+};
+export default Admin

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useReservationsContext } from '../hooks/useReservationsContext'
 
 
-const ReservationForm = ({closeModal}) => {
+const UserReservationForm = ()=> {
     const { dispatch } = useReservationsContext()
 
     const [petname, setPetname] = useState('')
@@ -53,13 +53,9 @@ const ReservationForm = ({closeModal}) => {
 
     return (
 
-        <div className='modalBackground'>
-        <div className='modalContainer'>
-            <div className='titleCloseBtn'>
-            <button  onClick={() => closeModal(false)}>X</button>
-            </div>
-            <form className='create' onSubmit={handleSubmit}>
-               
+
+            <form className='createss' onSubmit={handleSubmit}>
+                <div className='col1'>
                     <h3>Make a Reservation</h3>
 
                     {error && <div className='error'>{error}</div>}
@@ -98,12 +94,12 @@ const ReservationForm = ({closeModal}) => {
                         id='petname'
                         placeholder='Your Pet Name'
                         className={emptyFields.includes('petname') ? 'error' : ''} />
-                 
+                    <button className='btnSubmit' type='submit'>Submit</button>
 
 
-          
+                </div>
 
-           
+                <div className='col2'>
                     <label for='size'>Pet Size</label>
                     <select onChange={(e) => setSize(e.target.value)} >
                         <option value='' >--Please Select Size--</option>
@@ -128,8 +124,8 @@ const ReservationForm = ({closeModal}) => {
                         placeholder='Breed'
                         className={emptyFields.includes('breed') ? 'error' : ''} />
 
-            
-       
+                </div>
+                <div className='col3'>
 
                     <label for='startDate'>Start Date Reservation</label>
                     <input type='date'
@@ -148,15 +144,12 @@ const ReservationForm = ({closeModal}) => {
                         placeholder='Your EndDate'
                     />
 
-               
+                </div>
 
-<button className='btnSubmit' type='submit'>Submit</button>
+
             </form>
-            
-            </div>
 
-        </div>
     )
 }
 
-export default ReservationForm
+export default UserReservationForm
