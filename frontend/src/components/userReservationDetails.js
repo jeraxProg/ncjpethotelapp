@@ -20,13 +20,13 @@ const UserReservationDetails = ({ reservation, noDetail }) => {
 
   return (
     <div className='reservation-details'>
-        <h3>Referrence ID: {reservation._id}</h3>
+        {/* <h3>Referrence ID: {reservation._id}</h3> */}
         <h4>Petname: {reservation.petname}</h4>
         <p>Type of Pet: {reservation.typeOfPet}</p> 
         <p>Breed: {reservation.breed}</p>
-        <p>Owner: {reservation.name}</p>
-        <p>Email: {reservation.email}</p>
-        <p>Phone No: {reservation.phone}</p>
+        {/* <p>Owner: {reservation.name}</p> */}
+        {/* <p>Email: {reservation.email}</p> */}
+        {/* <p>Phone No: {reservation.phone}</p> */}
         <p>Size: {reservation.size}</p>
         <p>Reservation date: {reservation.startDate} to {reservation.endDate}</p>
         <p>{formatDistanceToNow(new Date(reservation.createdAt), {addSuffix:true})}</p>

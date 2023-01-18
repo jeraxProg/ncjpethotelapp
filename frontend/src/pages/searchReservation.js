@@ -27,7 +27,7 @@ const SearchReservation = () => {
             }
         }
         fetchReservations()
-    },[])
+    },[dispatch])
 
   return (
     <div className='reserve'>
@@ -47,9 +47,9 @@ const SearchReservation = () => {
         <h4>Petname: Sample</h4>
         <p>Type of Pet: Sample</p> 
         <p>Breed: Sample</p>
-        <p>Owner: Sample</p>
-        <p>Email: Sample</p>
-        <p>Phone No:Sample</p>
+        {/* <p>Owner: Sample</p> */}
+        {/* <p>Email: Sample</p> */}
+        {/* <p>Phone No:Sample</p> */}
         <p>Size: Sample</p>
         <p>Reservation date: Sample Date</p>
         {/* <span className="material-symbols-outlined" onClick={handleClick}>delete</span> */}

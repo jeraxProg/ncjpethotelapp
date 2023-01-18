@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { useReservationsContext } from '../hooks/useReservationsContext'
+import {useAuthContext} from "../hooks/useAuthContext"
 
 
 const ReservationForm = ({closeModal}) => {
     const { dispatch } = useReservationsContext()
+    const {user} = useAuthContext()
 
     const [petname, setPetname] = useState('')
     const [breed, setBreed] = useState('')
@@ -20,13 +22,19 @@ const ReservationForm = ({closeModal}) => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
+        if (!user) {
+            setError('You must be logged in')
+            return 
+        }
+
         const reservation = { petname, breed, name, email, phone, size, startDate, endDate, typeOfPet }
 
         const response = await fetch('/api/reservations', {
             method: 'POST',
             body: JSON.stringify(reservation),
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${user.token}`
             }
 
         })

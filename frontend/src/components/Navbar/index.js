@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import {FaBars} from 'react-icons/fa'
 import {IconContext} from 'react-icons/lib'
 import {animateScroll as scroll} from 'react-scroll';
+import { useLogout } from '../../hooks/useLogout';
+import { useAuthContext } from '../../hooks/useAuthContext';
 
 
 import {
@@ -18,7 +20,18 @@ import {
   NavBtnLink,
 } from './NavbarElements';
 
+
+
 const Navbar = ({toggle}) => {
+
+  //use LOGOUT
+  const { logout} = useLogout()
+  const { user } =  useAuthContext()
+
+  const handleClick = () => {
+    logout();
+
+  }
 
   const [scrollNav, setscrollNav] = useState(false);
 
@@ -97,7 +110,13 @@ const Navbar = ({toggle}) => {
           </NavMenu>
           <NavBtn>
             <NavBtnLink to="/reserve">Reserve Now </NavBtnLink>
-      
+            {user && (
+              <>
+            <span style={{color: "white"}}>{user.email}</span>
+            <NavBtnLink to="/admin">Admin </NavBtnLink>
+            <NavBtnLink onClick={handleClick}>Logout </NavBtnLink>
+            </>
+            )}
           </NavBtn>
           
         </NavbarContainer>

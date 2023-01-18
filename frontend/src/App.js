@@ -11,6 +11,8 @@ import Petboardingpage from './pages/petboarding';
 import SearchReservation from './pages/searchReservation';
 import UserForm from './pages/userForm';
 import Admin from './pages/Admin';
+import Login from './pages/login';
+import Signup from './pages/Signup';
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
           <Route path='/reserve' element={<UserForm/>}/>
           <Route path='/admin' element={<Admin/>}/>
           <Route path='/search' element={<SearchReservation/>}/>
+          <Route path='/login' element={<Login/>}/>
+          <Route path='/signup' element={<Signup/>}/>
           <Route path="*" element={<h1>Page Not Found</h1>} />
         </Routes>
         </div>
