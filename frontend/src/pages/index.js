@@ -20,6 +20,7 @@ const Homepage = () => {
     <>
     <Sidebar isOpen={isOpen} toggle={toggle}/>
     <Navbar toggle={toggle}/>
+    <Navbar/>
     <HeroSection/>
    
     <InfoSection {...homeObjTwo}/>

@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react'
+import Navbar from '../components/Navbar'
 // import { FaSearch } from "react-icons/fa";
 import UserReservationDetails from '../components/userReservationDetails'
 import { useReservationsContext } from '../hooks/useReservationsContext'
@@ -31,6 +32,7 @@ const SearchReservation = () => {
 
   return (
     <div className='reserve'>
+          <Navbar/>
 
         <div className='reservationsUser'><h1>Search Reservation Here</h1>
     <div className='searchId'>
